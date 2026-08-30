@@ -4,10 +4,7 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
-uniform vec2 u_mouse;
 uniform float u_time;
-
-const float RATE = 0.1;
 
 const vec3 colors[7] = vec3[](
     vec3(0.647, 0.004, 0.384),
@@ -35,7 +32,7 @@ void main() {
     vec3 color = vec3(0.0);
 
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < colors.length(); i++) {
       float from = float(i) * lw;
       float to = float(i + 1) * lw;
       color += paintline(from, to, colors[i], st.y);
